@@ -20,75 +20,73 @@
 // FOR STEP 16, ADD THREE OF YOUR OWN FAVORITE MOVIES WITH METADATA TO THE END OF THE JSON FILE LIST
 */
 
-
 const vue_app = Vue.createApp({
-      // This automatically imports your movies.json file and puts it into
-      //   the variable: movies
-      created () {
-            fetch('movies.json').then(response => response.json()).then(json => {
-                  this.movies = json
-            })
-      },
-      data() {
-            return {
-                  // This holds your movies.json data.
-                  
-                  movies: [],
-                  /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
-                  title: "IMDB + Vanessa's Top 8 Movies",
-                  owner: "Vanessa Ogno",
-                  github: "https://github.com/Nessa0716/NJIT-2",
-            }
-    },
-      methods: {
-            /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
-            getMonthText(dateArray) {
+  // This automatically imports your movies.json file and puts it into
+  //   the variable: movies
+  created() {
+    fetch("movies.json")
+      .then((response) => response.json())
+      .then((json) => {
+        this.movies = json;
+      });
+  },
+  data() {
+    return {
+      // This holds your movies.json data.
 
-                  let year = dateArray[0];
-                  let day = dateArray[2];
-                  switch (dateArray[1]) {
-                        case 1:
-                              month = "January";
-                              break;
-                        case 2:
-                              month = "February";
-                              break;
-                        case 3:
-                              month = "March";
-                              break;
-                        case 4:
-                              month = "April";
-                              break;
-                        case 5:
-                              month = "May";
-                              break;
-                        case 6:
-                              month = "June";
-                              break;
-                        case 7:
-                              month = "July";
-                              break;
-                        case 8:
-                              month = "August";
-                              break;
-                        case 9:
-                              month = "September";
-                              break;
-                        case 10:
-                              month = "October";
-                              break;
-                        case 11:
-                              month = "November";
-                              break;
-                        case 12:
-                              month = "December";
-                              break;
-                  }
-                  return `${month} ${day}, ${year}`
-            }
+      movies: [],
+      /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
+      title: "IMDB + Vanessa's Top 8 Movies",
+      owner: "Vanessa Ogno",
+      github: "https://github.com/Nessa0716/NJIT-2",
+    };
+  },
+  methods: {
+    /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+    getMonthText(dateArray) {
+      let year = dateArray[0];
+      let day = dateArray[2];
+      switch (dateArray[1]) {
+        case 1:
+          month = "January";
+          break;
+        case 2:
+          month = "February";
+          break;
+        case 3:
+          month = "March";
+          break;
+        case 4:
+          month = "April";
+          break;
+        case 5:
+          month = "May";
+          break;
+        case 6:
+          month = "June";
+          break;
+        case 7:
+          month = "July";
+          break;
+        case 8:
+          month = "August";
+          break;
+        case 9:
+          month = "September";
+          break;
+        case 10:
+          month = "October";
+          break;
+        case 11:
+          month = "November";
+          break;
+        case 12:
+          month = "December";
+          break;
       }
-})
+      return `${month} ${day}, ${year}`;
+    },
+  },
+});
 
-vue_app.mount("#vue_app")
-
-
+vue_app.mount("#vue_app");
